@@ -1,43 +1,62 @@
 const main = document.getElementById("app-main");
 const buttons = document.querySelectorAll(".bottom-nav button");
 
+/* ===============================
+   LOAD PAGE
+================================ */
 function loadPage(page) {
   fetch(`pages/${page}.html`)
     .then(res => res.text())
     .then(html => {
       main.innerHTML = html;
 
+      // Active nav state
       buttons.forEach(btn => btn.classList.remove("active"));
-      document.querySelector(`[data-page="${page}"]`)
+      document
+        .querySelector(`[data-page="${page}"]`)
         .classList.add("active");
+
+      // 🔥 Re-bind page-specific JS
+      initThemeToggle();
     });
 }
 
-// Load home by default
+/* ===============================
+   THEME TOGGLE (SAFE)
+================================ */
+function initThemeToggle() {
+  const toggleBtn = document.getElementById("theme-toggle");
+
+  if (!toggleBtn) return;
+
+  toggleBtn.addEventListener("click", () => {
+    const root = document.documentElement;
+    const currentTheme = root.getAttribute("data-theme");
+
+    const nextTheme = currentTheme === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", nextTheme);
+
+    localStorage.setItem("theme", nextTheme);
+  });
+}
+
+/* ===============================
+   INITIAL LOAD
+================================ */
 loadPage("home");
 
-// Handle nav click
+/* ===============================
+   NAV CLICK
+================================ */
 buttons.forEach(btn => {
   btn.addEventListener("click", () => {
     loadPage(btn.dataset.page);
   });
 });
 
-// Theme toggle
-const toggleBtn = document.getElementById("theme-toggle");
-
-if (toggleBtn) {
-  toggleBtn.addEventListener("click", () => {
-    const currentTheme = document.documentElement.getAttribute("data-theme");
-
-    const nextTheme = currentTheme === "dark" ? "light" : "dark";
-    document.documentElement.setAttribute("data-theme", nextTheme);
-
-    localStorage.setItem("theme", nextTheme);
-  });
-}
-
-// Load saved theme
+/* ===============================
+   LOAD SAVED THEME (GLOBAL)
+================================ */
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme) {
   document.documentElement.setAttribute("data-theme", savedTheme);
