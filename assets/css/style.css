@@ -75,17 +75,24 @@
   background: #0f0f0f;
   border-radius: 40px;
 
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 🔥 5 equal columns */
   align-items: center;
-  justify-content: space-around;
 
+  padding: 0 12px;
   box-shadow: 0 12px 30px rgba(0,0,0,.35);
   z-index: 1000;
 }
 
-.nav-item {
+/* Buttons */
+.bottom-nav button {
+  background: none;
+  border: none;
+
   width: 44px;
   height: 44px;
+
+  justify-self: center; /* center inside each column */
 
   display: flex;
   align-items: center;
@@ -93,22 +100,19 @@
 
   font-size: 22px;
   color: #9ca3af;
-  text-decoration: none;
-
   border-radius: 50%;
+  cursor: pointer;
+
   transition: color .2s ease;
 }
 
-.nav-item:hover {
-  color: #fff;
-}
-
-.nav-item.active {
+/* Active */
+.bottom-nav button.active {
   color: #fff;
 }
 
 /* Center Home Button */
-.nav-home {
+.bottom-nav .home {
   width: 54px;
   height: 54px;
 
