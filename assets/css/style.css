@@ -72,7 +72,7 @@
   width: min(92%, 420px);
   height: 64px;
 
-  background: #0f0f0f;
+  background-color: var(--bg);
   border-radius: 40px;
 
   display: grid;
