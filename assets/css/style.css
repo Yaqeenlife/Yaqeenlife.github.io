@@ -1,0 +1,117 @@
+/* ==========================================================================
+   Project Name  : Yaqeen Life
+   Tagline       : A Life Built on Certainty
+   Description   :
+   Yaqeen Life is an Islamic life-guidance app designed to help users live
+   with certainty, faith, and inner peace through the light of the Qur’an
+   and Sunnah.
+
+   The core mission of Yaqeen Life is to build strong Yaqeen (certainty in
+   faith), guiding users away from doubt, anxiety, and confusion toward
+   trust in Allah and clarity in everyday life.
+
+   Philosophy    : Yaqeen Life is not just an app — it is a journey toward
+                   a life built on certainty.
+
+   Author        : Yaqeen Life Team
+   Version       : 1.0.0
+   License       : Proprietary
+   Last Updated  : 2026
+   ========================================================================== */
+
+/* =========================================================
+   DESIGN TOKENS
+========================================================= */
+:root {
+  /* Typography */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --font-size-base: 1rem;
+  --line-height: 1.6;
+
+  /* Spacing */
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+
+  /* Colors */
+  --bg: #fafafa;
+  --surface: #f1f1f1;
+  --text-primary: #111111;
+  --text-secondary: #5f5f5f;
+}
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+[data-theme="dark"] {
+  --bg: #121212;
+  --surface: #1e1e1e;
+  --text-primary: #eaeaea;
+  --text-secondary: #a8a8a8;
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================================
+   PAGE LAYOUT (HEIGHT DISTRIBUTION)
+========================================================= */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+
+  background-color: var(--bg);
+  color: var(--text-primary);
+}
+
+/* Header & Footer take natural height */
+header,
+footer {
+  flex-shrink: 0;
+  background-color: var(--surface);
+}
+
+/* Main fills remaining space */
+main {
+  flex: 1;
+}
+
+/* =========================================================
+   CONTENT WIDTH CONTROL
+========================================================= */
+.container {
+  width: 100%;
+  max-width: 72rem; /* ~1152px */
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+/* =========================================================
+   RESPONSIVE PADDING ENHANCEMENT
+========================================================= */
+@media (min-width: 768px) {
+  .container {
+    padding-inline: var(--space-5);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: var(--space-6);
+  }
+}
