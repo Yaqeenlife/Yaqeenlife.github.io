@@ -282,3 +282,120 @@ body {
 [data-theme="dark"] .toggle-thumb {
   transform: translateX(20px);
 }
+
+/* =========================================================
+   QURAN PAGE
+========================================================= */
+
+.quran {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* Header */
+.quran-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.quran-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.quran-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* Loading */
+.quran-loading {
+  color: var(--text-secondary);
+}
+
+/* Surah List */
+.surah-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.surah-item {
+  background: var(--surface);
+  border: none;
+  border-radius: var(--radius-pill);
+
+  padding: var(--space-5);
+  text-align: left;
+
+  font-size: 0.95rem;
+  color: var(--text-primary);
+
+  cursor: pointer;
+}
+
+/* Ayah View */
+.ayah-view {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* Back button */
+.back-btn {
+  align-self: flex-start;
+
+  background: var(--surface);
+  color: var(--text-primary);
+
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: var(--space-4) var(--space-5);
+
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* Ayah list */
+.ayah-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* Single Ayah */
+.ayah {
+  background: var(--surface);
+  border-radius: var(--radius-pill);
+  padding: var(--space-5);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Arabic */
+.ayah-ar {
+  font-size: 1.25rem;
+  line-height: 2;
+  text-align: right;
+}
+
+/* Bengali */
+.ayah-bn {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+/* English */
+.ayah-en {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Utility */
+.hidden {
+  display: none;
+}
