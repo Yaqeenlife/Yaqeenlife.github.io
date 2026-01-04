@@ -63,6 +63,18 @@
   padding: 0;
 }
 
+#app-main {
+  min-height: 100vh;
+
+  /* space for fixed navs */
+  padding-top: 96px;    /* top nav height + gap */
+  padding-bottom: 96px; /* bottom nav height + gap */
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 /* Top Navigation */
 .top-nav {
   position: fixed;
@@ -92,6 +104,7 @@
   color: #ffffff;
 }
 
+/* Bottom Navigation */
 .bottom-nav {
   position: fixed;
   bottom: 16px;
