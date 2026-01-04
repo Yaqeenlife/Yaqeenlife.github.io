@@ -14,10 +14,11 @@ function loadPage(page) {
       buttons.forEach(btn => btn.classList.remove("active"));
       document
         .querySelector(`[data-page="${page}"]`)
-        .classList.add("active");
+        ?.classList.add("active");
 
       // 🔥 Re-bind page-specific JS
       initThemeToggle();
+      initQuranPage(); // ✅ ADD THIS LINE
     });
 }
 
