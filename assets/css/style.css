@@ -151,10 +151,6 @@
 /* Active */
 .bottom-nav button.active {
   color: #fff;
-}
-
-/* Center Home Button */
-.bottom-nav .home {
   width: 54px;
   height: 54px;
 
